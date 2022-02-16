@@ -5,15 +5,16 @@ import { EditCode } from "./EditCode";
 import { AzureFunctions } from "./AzureFunctions";
 import { Graph } from "./Graph";
 import { CurrentUser } from "./CurrentUser";
-import { useTeamsFx } from "./lib/useTeamsFx";
 import { TeamsUserCredential } from "@microsoft/teamsfx";
 import { useData } from "./lib/useData";
 import { Deploy } from "./Deploy";
 import { Publish } from "./Publish";
+import { useTeams } from "msteams-react-base-component";
 
-export function Welcome(props: { showFunction?: boolean; environment?: string }) {
-  const { showFunction, environment } = {
+export function Welcome(props: { showFunction?: boolean; includeAuth?: boolean; environment?: string }) {
+  const { showFunction, includeAuth, environment } = {
     showFunction: true,
+    includeAuth: true,
     environment: window.location.hostname === "localhost" ? "local" : "azure",
     ...props,
   };
@@ -38,10 +39,13 @@ export function Welcome(props: { showFunction?: boolean; environment?: string })
     };
   });
 
-  const { isInTeams } = useTeamsFx();
+  const { inTeams } = useTeams({})[0];
   const userProfile = useData(async () => {
+    if (!includeAuth) {
+      return undefined;
+    }
     const credential = new TeamsUserCredential();
-    return isInTeams ? await credential.getUserInfo() : undefined;
+    return inTeams ? await credential.getUserInfo() : undefined;
   })?.data;
   const userName = userProfile ? userProfile.displayName : "";
   return (
@@ -55,8 +59,8 @@ export function Welcome(props: { showFunction?: boolean; environment?: string })
           {selectedMenuItem === "local" && (
             <div>
               <EditCode showFunction={showFunction} />
-              {isInTeams && <CurrentUser userName={userName} />}
-              <Graph />
+              {inTeams && <CurrentUser userName={userName} />}
+              {includeAuth && <Graph />}
               {showFunction && <AzureFunctions />}
             </div>
           )}
