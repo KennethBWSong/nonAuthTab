@@ -1,0 +1,23 @@
+{
+    "appName": "nonAuthTab",
+    "projectId": "aa2a9bb5-fa03-4c82-b0b0-d09a2f61e7d1",
+    "version": "2.1.0",
+    "isFromSample": false,
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "azureResources": [],
+        "capabilities": [
+            "Tab"
+        ],
+        "activeResourcePlugins": [
+            "fx-resource-frontend-hosting",
+            "fx-resource-identity",
+            "fx-resource-aad-app-for-teams",
+            "fx-resource-local-debug",
+            "fx-resource-appstudio"
+        ]
+    },
+    "programmingLanguage": "typescript"
+}
