@@ -1,0 +1,29 @@
+{
+    "solution": {
+        "teamsAppTenantId": "68a183da-edbf-4d7a-bb06-562717e119ff",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 3 Days",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "needCreateResourceGroup": true,
+        "resourceGroupName": "nonAuthTab-dev-rg",
+        "location": "East US",
+        "resourceNameSuffix": "a248a9",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "68a183da-edbf-4d7a-bb06-562717e119ff",
+        "teamsAppId": "80f6d727-4211-40a6-a980-5bc6db05d3a2",
+        "teamsAppUpdatedAt": 1644991563586
+    },
+    "fx-resource-identity": {
+        "identityName": "nonauthtabdevb2c8ba",
+        "identityResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/nonAuthTab-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/nonauthtabdevb2c8ba",
+        "identityClientId": "e74184f2-5afc-4a40-867b-3aab70c5e282"
+    },
+    "fx-resource-frontend-hosting": {
+        "domain": "nonauthtabdevb2c8batab.z13.web.core.windows.net",
+        "endpoint": "https://nonauthtabdevb2c8batab.z13.web.core.windows.net",
+        "indexPath": "/index.html#",
+        "storageResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/nonAuthTab-dev-rg/providers/Microsoft.Storage/storageAccounts/nonauthtabdevb2c8batab"
+    }
+}

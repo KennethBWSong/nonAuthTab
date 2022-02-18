@@ -10,6 +10,7 @@ import { useData } from "./lib/useData";
 import { Deploy } from "./Deploy";
 import { Publish } from "./Publish";
 import { useTeams } from "msteams-react-base-component";
+import { EnableAuth } from "./EanbleAuth";
 
 export function Welcome(props: { showFunction?: boolean; includeAuth?: boolean; environment?: string }) {
   const { showFunction, includeAuth, environment } = {
@@ -59,8 +60,9 @@ export function Welcome(props: { showFunction?: boolean; includeAuth?: boolean; 
           {selectedMenuItem === "local" && (
             <div>
               <EditCode showFunction={showFunction} />
-              {inTeams && <CurrentUser userName={userName} />}
+              {inTeams && includeAuth && <CurrentUser userName={userName} />}
               {includeAuth && <Graph />}
+              {!includeAuth && <EnableAuth environment={environment} />}
               {showFunction && <AzureFunctions />}
             </div>
           )}
