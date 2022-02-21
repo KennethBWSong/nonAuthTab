@@ -1,36 +1,8 @@
 export function EnableAuth(props: {environment?: string}) {
   const {
-    environment,
-    authStartUrl,
-    authEndUrl,
-    authPath,
-    authStartPage,
-    authEndPage,
-    aadPlugin,
-    projectSettingsPath,
-    activeResourcePlugins,
-    useTeamsFx,
-    useTeamsFxUrl,
-    useTeamsFxPath,
-    app,
-    appUrl,
-    appPath
+    environment
   } = {
     environment: "local",
-    authStartUrl: "https://github.com/OfficeDev/TeamsFx/blob/main/templates/tab/ts/default/public/auth-start.html",
-    authEndUrl: "https://github.com/OfficeDev/TeamsFx/blob/main/templates/tab/ts/default/public/auth-end.html",
-    authPath: "tabs/public",
-    authStartPage: "auth-start.html",
-    authEndPage: "auth-end.html",
-    aadPlugin: "fx-resource-aad-app-for-teams",
-    projectSettingsPath: ".fx/configs/projectSettings.json",
-    activeResourcePlugins: "ActiveResourcePlugins",
-    useTeamsFx: "useTeamsFx.ts",
-    useTeamsFxPath: "tabs/components/sample/lib",
-    useTeamsFxUrl: "https://github.com/OfficeDev/TeamsFx/blob/main/templates/tab/ts/default/src/components/sample/lib/useTeamsFx.ts",
-    app: "App.tsx",
-    appUrl: "https://github.com/OfficeDev/TeamsFx/blob/main/templates/tab/ts/default/src/components/App.tsx",
-    appPath: "tabs/components/src/App.tsx",
     ...props,
   };
 
@@ -38,34 +10,32 @@ export function EnableAuth(props: {environment?: string}) {
 
   return (
     <div>
-      <h2>Enable Auth</h2>
+      <h2>Add Single Sign On feature to retrieve user profile</h2>
       <p>
-        You can follow the following steps to enable Auth in this sample.
+        One of the advantages of building tab application in Teams is to leverage the user's identity 
+        provided through Microsoft Teams (Known as {" "}
+          <a href={"https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/auth-aad-sso?tabs=dotnet"} target="_blank" rel="noreferrer">
+            SSO support
+          </a>
+        ) and interact with Microsoft Graph for 
+        building rich and seamless user experience. With Teams Toolkit, authentication is further 
+        simplified by automatic AAD app registration and configuration.
       </p>
       <p>
-        1. Add {" "}<code>{aadPlugin}</code> into {" "}<code>{activeResourcePlugins}</code> under {" "}<code>{projectSettingsPath}</code>
-      </p>
-      <p>
-        2. Copy {" "}<code>{authStartPage}</code>from {" "}<code>{authStartUrl}</code> and place it under {" "}<code>{authPath}</code>
-      </p>
-      <p>
-        3. Copy {" "}<code>{authEndPage}</code> from {" "}<code>{authEndUrl}</code> and place it under {" "}<code>{authPath}</code>
-      </p>
-      <p>
-        4. Copy {" "}<code>{useTeamsFx}</code> from {" "}<code>{useTeamsFxUrl}</code> and place it under {" "}<code>{useTeamsFxPath}</code>
-      </p>
-      <p>
-        5. Copy {" "}<code>{app}</code> from {" "}<code>{appUrl}</code> and replace {" "}<code>{appPath}</code>
-      </p>
-      <p>
-        6. Run {" "}<code>{command}</code> again
-      </p>
-      <p>
-        For more information, see the{" "}
-        <a href="https://aka.ms/teamsfx-docs" target="_blank" rel="noreferrer">
-          docs
-        </a>
+        Starting with this simple static tab app, you can follow few steps to add SSO logics to authenticate 
+        users, retrieve user's profile photo, and build UI layers with {" "}
+          <a href={"https://developer.microsoft.com/en-us/fluentui#/get-started/web"}  target="_blank" rel="noreferrer">
+            Fluent
+          </a>
         .
+      </p>
+      <p>
+        See instructions ({" "}
+          <a href="https://github.com/KennethBWSong/nonAuthTab/blob/master/readme.md">
+            here
+          </a>
+        )to learn how to enable Authentication component with Teams Toolkit 
+        and code snippets.
       </p>
     </div>
   )
