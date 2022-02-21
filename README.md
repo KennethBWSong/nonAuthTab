@@ -8,6 +8,6 @@
 
 1. Copy `useTeamsFx.ts` from [here](https://github.com/OfficeDev/TeamsFx/blob/main/templates/tab/ts/default/src/components/sample/lib/useTeamsFx.ts) to `tabs/components/sample/lib`
 
-1. Copy `App.tsx` from [https://github.com/OfficeDev/TeamsFx/blob/main/templates/tab/ts/default/src/components/App.tsx] to `tabs/components/src/App.tsx`
+1. Copy `App.tsx` from [here](https://github.com/OfficeDev/TeamsFx/blob/main/templates/tab/ts/default/src/components/App.tsx) to `tabs/components/src/App.tsx`
 
 1. Run `local-debug` or `provision` and `deploy` again 
