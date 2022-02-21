@@ -31,7 +31,7 @@ export function EnableAuth(props: {environment?: string}) {
       </p>
       <p>
         See instructions ({" "}
-          <a href="https://github.com/KennethBWSong/nonAuthTab/blob/master/readme.md">
+          <a href="https://github.com/KennethBWSong/nonAuthTab/blob/removeAuth/README.md" target="_blank" rel="noreferrer">
             here
           </a>
         )to learn how to enable Authentication component with Teams Toolkit 
